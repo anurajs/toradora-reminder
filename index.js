@@ -1,6 +1,17 @@
 import { Client } from 'discord.js';
 import { scheduleJob } from 'node-schedule';
 import 'dotenv/config';
+import http from 'http';
+
+const port = process.env.PORT;
+const host = process.env.HOST;
+
+http
+  .createServer((req, res) => {
+    res.write('ALIVE');
+    res.end();
+  })
+  .listen(port);
 
 const client = new Client();
 client.once('ready', async () => {
