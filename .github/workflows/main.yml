@@ -1,4 +1,4 @@
-  name: modal-deployment
+name: modal-deployment
 
 on:
   push:
